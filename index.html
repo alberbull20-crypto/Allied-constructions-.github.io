@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allied Interiors and Construction</title>
+<meta name="description" content="Allied Interiors and Construction — interior design and general construction across Nairobi, Kiambu and Machakos. Masonry, roofing, plumbing, electrical, tiling and full interior fit-outs.">
+<meta name="theme-color" content="#10213B">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Allied Interiors and Construction">
+<meta property="og:description" content="Design-led construction and interior fit-outs across Nairobi, Kiambu and Machakos.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/work-exterior-2.jpg">
+
+<!-- Favicon: simple navy/amber monogram, no external file needed -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310213B'/%3E%3Ctext x='32' y='43' font-family='Arial, sans-serif' font-size='30' font-weight='700' fill='%23E8A324' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+<!-- Local-business structured data for search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Allied Interiors and Construction",
+  "image": "images/work-exterior-1.jpg",
+  "telephone": "+254713982414",
+  "email": "alliedinteriors254@gmail.com",
+  "areaServed": ["Nairobi", "Kiambu", "Machakos"],
+  "address": { "@type": "PostalAddress", "streetAddress": "Eastern Bypass", "addressLocality": "Nairobi", "addressCountry": "KE" }
+}
+</script>
+
+<!-- Google Fonts: Space Grotesk for headings (technical/blueprint feel), Inter for body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ TOP NAVIGATION ============ -->
+<header class="navbar">
+  <div class="nav-inner">
+    <button class="brand" data-nav="home" aria-label="Go to home page">
+      <span class="brand-mark">AI</span>
+      <span class="brand-text">
+        Allied Interiors and Construction
+        <small>Interior Design &amp; General Construction</small>
+      </span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <button class="nav-link" data-nav="home">Home</button>
+      <button class="nav-link" data-nav="auth" id="navAuthBtn">Login</button>
+      <button class="nav-link is-hidden" data-nav="dashboard" id="navDashboardBtn">Dashboard</button>
+      <button class="nav-link is-hidden" id="navLogoutBtn">Log out</button>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="app">
+
+  <!-- ============================================================ -->
+  <!-- PAGE 1: HOME / PUBLIC PAGE                                    -->
+  <!-- ============================================================ -->
+  <section class="page is-active" id="page-home" data-page="home">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-photo" style="background-image:url('images/work-exterior-2.jpg')" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Nairobi, Kiambu &amp; Machakos</p>
+        <h1 class="hero-title">Elevate your living experience</h1>
+        <p class="hero-lede">
+          Allied Interiors and Construction designs, builds and fits out homes end to end —
+          structural work, roofing, plumbing and electrical, through to kitchens, flooring
+          and lighting. One team, one contract, no handoffs.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-nav="auth">Get started</button>
+          <button class="btn btn-ghost" id="heroContactBtn">Contact us</button>
+          <a class="btn btn-whatsapp" href="https://wa.me/p/8824173431018004/254713982414" target="_blank" rel="noopener">
+            <span class="wa-icon" aria-hidden="true">●</span> Chat on WhatsApp
+          </a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>120+</dt><dd>Projects completed</dd></div>
+          <div><dt>13</dt><dd>Years in operation</dd></div>
+          <div><dt>4.8/5</dt><dd>Average client rating</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Trust / credentials strip -->
+    <div class="trust-bar">
+      <div class="trust-bar-inner">
+        <span>NCA registered contractor</span>
+        <span>Fully insured &amp; bonded</span>
+        <span>6-month workmanship warranty</span>
+        <span>Free site visits &amp; quotes</span>
+      </div>
+    </div>
+
+    <!-- Brand quote -->
+    <div class="quote-strip">
+      <p>“At Allied Interiors, we strive to exceed your expectations on every project.”</p>
+    </div>
+
+    <!-- Services strip -->
+    <div class="section services">
+      <ul class="services-list">
+        <li>
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="12" height="5" rx="1"/><line x1="9" y1="9" x2="9" y2="14"/><rect x="6" y="14" width="6" height="6" rx="1"/></svg></span>
+          Interior design &amp; styling
+        </li>
+        <li>
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="4"/><path d="M6 4 C6 10, 10 10, 9 20"/><path d="M18 4 C18 10, 14 10, 15 20"/></svg></span>
+          Curtains &amp; soft furnishings
+        </li>
+        <li>
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="1"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="2" y1="15" x2="22" y2="15"/><line x1="7" y1="4" x2="7" y2="9"/><line x1="14" y1="4" x2="14" y2="9"/><line x1="10" y1="9" x2="10" y2="15"/><line x1="17" y1="9" x2="17" y2="15"/><line x1="7" y1="15" x2="7" y2="20"/><line x1="14" y1="15" x2="14" y2="20"/></svg></span>
+          Masonry &amp; walling
+        </li>
+        <li>
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12 L12 4 L22 12"/><path d="M5 12 V20 H19 V12"/><line x1="9" y1="12" x2="9" y2="20"/><line x1="15" y1="12" x2="15" y2="20"/></svg></span>
+          Mabati &amp; roofing
+        </li>
+        <li>
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8 h9 a3 3 0 0 1 3 3 v2"/><line x1="16" y1="13" x2="16" y2="17"/><circle cx="16" cy="19" r="1.3"/><line x1="4" y1="5" x2="4" y2="11"/></svg></span>
+          Plumbing
+        </li>
+        <li>
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-linejoin="round"><path d="M13 3 L5 14 h6 l-2 7 l9 -12 h-6 z"/></svg></span>
+          Electrical
+        </li>
+        <li>
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></span>
+          Tiling &amp; finishes
+        </li>
+      </ul>
+    </div>
+
+    <!-- How we work -->
+    <div class="section section-tinted">
+      <div class="section-head">
+        <h2>How we work</h2>
+        <p>Four steps from first call to handover.</p>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step">
+          <span class="process-num">01</span>
+          <h4>Consultation</h4>
+          <p>We visit your site, walk the scope with you and confirm a realistic budget range.</p>
+        </li>
+        <li class="process-step">
+          <span class="process-num">02</span>
+          <h4>Design &amp; quote</h4>
+          <p>Drawings, a materials schedule and a fixed-price quote — no surprise variations later.</p>
+        </li>
+        <li class="process-step">
+          <span class="process-num">03</span>
+          <h4>Construction</h4>
+          <p>Work proceeds to a shared schedule, with weekly progress updates and site photos.</p>
+        </li>
+        <li class="process-step">
+          <span class="process-num">04</span>
+          <h4>Handover</h4>
+          <p>Joint walkthrough, snag list cleared, and your workmanship warranty starts.</p>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Work gallery -->
+    <div class="section">
+      <div class="section-head">
+        <h2>Recent work</h2>
+        <p>A few sites we've handed over this year.</p>
+      </div>
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="filter-btn is-active" data-filter="all">All work</button>
+        <button class="filter-btn" data-filter="construction">Construction</button>
+        <button class="filter-btn" data-filter="interiors">Interiors</button>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- injected by script.js -->
+      </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="section section-tinted">
+      <div class="section-head">
+        <h2>What clients say</h2>
+        <p>Real feedback from completed jobs.</p>
+      </div>
+      <div class="rating-summary" id="ratingSummary">
+        <!-- injected by script.js -->
+      </div>
+      <div class="reviews-grid" id="homeReviewsGrid">
+        <!-- injected by script.js -->
+      </div>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="cta-banner">
+      <div>
+        <h2>Have a project in mind?</h2>
+        <p>Create a free account to message our team directly and track your build.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <button class="btn btn-primary" id="ctaContactBtn">Contact us</button>
+        <a class="btn btn-whatsapp" href="https://wa.me/p/8824173431018004/254713982414" target="_blank" rel="noopener">
+          <span class="wa-icon" aria-hidden="true">●</span> WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PAGE 2: LOGIN / REGISTER                                      -->
+  <!-- ============================================================ -->
+  <section class="page" id="page-auth" data-page="auth">
+    <div class="auth-wrap">
+      <div class="auth-card">
+
+        <div class="tabs" role="tablist">
+          <button class="tab is-active" data-tab="login" role="tab">Log in</button>
+          <button class="tab" data-tab="register" role="tab">Register</button>
+        </div>
+
+        <!-- Login form -->
+        <form class="tab-panel is-active" data-tabpanel="login" id="loginForm" novalidate>
+          <h2 class="form-title">Welcome back</h2>
+          <p class="form-hint">Demo login — email <strong>client@example.com</strong>, password <strong>password123</strong></p>
+
+          <label class="field">
+            <span>Email</span>
+            <input type="email" id="loginEmail" required placeholder="you@example.com">
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <div class="password-wrap">
+              <input type="password" id="loginPassword" required placeholder="••••••••">
+              <button type="button" class="password-toggle" data-toggle-for="loginPassword" aria-label="Show password">
+                <svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </label>
+
+          <p class="field-error" id="loginError"></p>
+          <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        </form>
+
+        <!-- Register form -->
+        <form class="tab-panel" data-tabpanel="register" id="registerForm" novalidate>
+          <h2 class="form-title">Create your account</h2>
+          <p class="form-hint">Join to leave reviews, message David and follow other clients.</p>
+
+          <label class="field">
+            <span>Full name</span>
+            <input type="text" id="regName" required placeholder="Wanjiru Kamau">
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" id="regEmail" required placeholder="you@example.com">
+          </label>
+          <label class="field">
+            <span>Phone number</span>
+            <input type="tel" id="regPhone" required placeholder="07XX XXX XXX">
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <div class="password-wrap">
+              <input type="password" id="regPassword" required placeholder="At least 6 characters">
+              <button type="button" class="password-toggle" data-toggle-for="regPassword" aria-label="Show password">
+                <svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </label>
+
+          <p class="field-error" id="registerError"></p>
+          <button type="submit" class="btn btn-primary btn-block">Create account</button>
+        </form>
+
+        <p class="auth-admin-link">
+          Manage this site? <button class="link-btn" data-nav="admin-login">Company login</button>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PAGE 3: CLIENT DASHBOARD                                      -->
+  <!-- ============================================================ -->
+  <section class="page" id="page-dashboard" data-page="dashboard">
+    <div class="dash-header">
+      <div>
+        <p class="dash-eyebrow">Client dashboard</p>
+        <h1 id="dashWelcome">Welcome back</h1>
+      </div>
+    </div>
+
+    <div class="subtabs" role="tablist">
+      <button class="subtab is-active" data-tab="review">Post a review</button>
+      <button class="subtab" data-tab="feed">Community feed</button>
+      <button class="subtab" data-tab="contact">Contact contractor</button>
+    </div>
+
+    <!-- Post a review -->
+    <div class="subtab-panel is-active" data-tabpanel="review">
+      <div class="panel-card">
+        <h3>Share how the job went</h3>
+        <form id="reviewForm" novalidate>
+          <label class="field">
+            <span>Your rating</span>
+            <div class="star-input" id="reviewStarInput"></div>
+            <input type="hidden" id="reviewRatingValue" value="0">
+          </label>
+          <label class="field">
+            <span>Your review</span>
+            <textarea id="reviewText" rows="4" required placeholder="Tell other clients what David and the crew did well…"></textarea>
+          </label>
+          <label class="field">
+            <span>Photo (optional)</span>
+            <input type="file" id="reviewPhoto" accept="image/*">
+            <img class="photo-preview is-hidden" id="reviewPhotoPreview" alt="Selected photo preview">
+          </label>
+          <p class="field-error" id="reviewError"></p>
+          <button type="submit" class="btn btn-primary">Submit review</button>
+        </form>
+      </div>
+
+      <div class="panel-card">
+        <h3>Your reviews</h3>
+        <div id="myReviewsList" class="stacked-list">
+          <!-- injected -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Community feed -->
+    <div class="subtab-panel" data-tabpanel="feed">
+      <div class="panel-card">
+        <h3>Ask other clients</h3>
+        <form id="feedForm" novalidate>
+          <label class="field">
+            <span>Post something to the community</span>
+            <textarea id="feedText" rows="3" required placeholder="e.g. Anyone used David for a roofing job in Kitengela?"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Post</button>
+        </form>
+      </div>
+      <div id="feedList" class="stacked-list feed-list">
+        <!-- injected -->
+      </div>
+    </div>
+
+    <!-- Contact contractor -->
+    <div class="subtab-panel" data-tabpanel="contact">
+      <div class="panel-card panel-card-narrow">
+        <h3>Send us a message</h3>
+        <form id="contactForm" novalidate>
+          <label class="field">
+            <span>Project type</span>
+            <select id="contactProjectType">
+              <option value="New construction">New construction</option>
+              <option value="Renovation">Renovation</option>
+              <option value="Interior fit-out">Interior fit-out</option>
+              <option value="Repair / maintenance">Repair / maintenance</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Estimated budget</span>
+            <select id="contactBudget">
+              <option value="Under KES 500,000">Under KES 500,000</option>
+              <option value="KES 500,000 – 2M">KES 500,000 – 2M</option>
+              <option value="KES 2M – 5M">KES 2M – 5M</option>
+              <option value="KES 5M+">KES 5M+</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Message</span>
+            <textarea id="contactText" rows="4" required placeholder="Describe your project, location and timeline…"></textarea>
+          </label>
+          <label class="field">
+            <span>Photo (optional)</span>
+            <input type="file" id="contactPhoto" accept="image/*">
+            <img class="photo-preview is-hidden" id="contactPhotoPreview" alt="Selected photo preview">
+          </label>
+          <p class="field-success is-hidden" id="contactSuccess">Message sent — our team typically replies within a day.</p>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PAGE 4: ADMIN LOGIN GATE                                      -->
+  <!-- ============================================================ -->
+  <section class="page" id="page-admin-login" data-page="admin-login">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <h2 class="form-title">Company admin login</h2>
+        <p class="form-hint">Restricted area for the Allied Interiors team. Demo password: <strong>Allied2024</strong></p>
+        <form id="adminLoginForm" novalidate>
+          <label class="field">
+            <span>Admin password</span>
+            <div class="password-wrap">
+              <input type="password" id="adminPassword" required placeholder="••••••••">
+              <button type="button" class="password-toggle" data-toggle-for="adminPassword" aria-label="Show password">
+                <svg viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </label>
+          <p class="field-error" id="adminLoginError"></p>
+          <button type="submit" class="btn btn-primary btn-block">Enter admin area</button>
+        </form>
+        <p class="auth-admin-link">
+          <button class="link-btn" data-nav="home">← Back to site</button>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PAGE 5: ADMIN DASHBOARD                                       -->
+  <!-- ============================================================ -->
+  <section class="page" id="page-admin" data-page="admin">
+    <div class="dash-header dash-header-admin">
+      <div>
+        <p class="dash-eyebrow">Company admin</p>
+        <h1>Manage your site</h1>
+      </div>
+      <div class="dash-header-actions">
+        <button class="btn btn-ghost" id="resetDemoBtn">Reset demo data</button>
+        <button class="btn btn-ghost" id="adminLogoutBtn">Log out</button>
+      </div>
+    </div>
+
+    <div class="subtabs" role="tablist">
+      <button class="subtab is-active" data-tab="upload">Upload work</button>
+      <button class="subtab" data-tab="manage">Manage work</button>
+      <button class="subtab" data-tab="areviews">Reviews</button>
+      <button class="subtab" data-tab="messages">Messages</button>
+    </div>
+
+    <!-- Upload work -->
+    <div class="subtab-panel is-active" data-tabpanel="upload">
+      <div class="panel-card panel-card-narrow">
+        <h3 id="workFormTitle">Add a project photo</h3>
+        <form id="workForm" novalidate>
+          <input type="hidden" id="workEditId" value="">
+          <label class="field">
+            <span>Project title</span>
+            <input type="text" id="workTitle" required placeholder="e.g. Kitchen renovation — Kileleshwa">
+          </label>
+          <label class="field">
+            <span>Category</span>
+            <select id="workCategory">
+              <option value="construction">Construction</option>
+              <option value="interiors">Interiors</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Description</span>
+            <textarea id="workDesc" rows="3" required placeholder="Scope of work, materials used, timeline…"></textarea>
+          </label>
+          <label class="field">
+            <span>Photo</span>
+            <input type="file" id="workPhoto" accept="image/*">
+            <span class="field-note" id="workPhotoNote">No file? A placeholder photo will be used.</span>
+            <img class="photo-preview is-hidden" id="workPhotoPreview" alt="Selected photo preview">
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="workSubmitBtn">Add to gallery</button>
+            <button type="button" class="link-btn is-hidden" id="workCancelEdit">Cancel edit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Manage work -->
+    <div class="subtab-panel" data-tabpanel="manage">
+      <div class="admin-grid" id="adminWorkGrid">
+        <!-- injected -->
+      </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="subtab-panel" data-tabpanel="areviews">
+      <div class="stacked-list" id="adminReviewsList">
+        <!-- injected -->
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="subtab-panel" data-tabpanel="messages">
+      <div class="stacked-list" id="adminMessagesList">
+        <!-- injected -->
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <span class="brand-mark">AI</span>
+      <p>Allied Interiors and Construction<br>Eastern Bypass, Nairobi</p>
+    </div>
+    <div class="footer-contact">
+      <p><span class="footer-label">Phone</span>+254 713 982 414</p>
+      <p><span class="footer-label">Email</span>alliedinteriors254@gmail.com</p>
+      <p><a class="footer-whatsapp" href="https://wa.me/p/8824173431018004/254713982414" target="_blank" rel="noopener">Chat on WhatsApp →</a></p>
+    </div>
+    <div class="footer-contact">
+      <p><span class="footer-label">Hours</span>Mon–Fri, 8am–6pm</p>
+      <p><span class="footer-label">Sat</span>8am–1pm</p>
+      <p><span class="footer-label">Visit</span>Site visits by appointment</p>
+    </div>
+    <button class="link-btn footer-admin-link" data-nav="admin-login">Company login</button>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="copyYear"></span> Allied Interiors and Construction. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Toast for quick confirmations -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
