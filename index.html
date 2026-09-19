@@ -30,9 +30,9 @@
 }
 </script>
 
-<!-- Google Fonts: Space Grotesk for headings (technical/blueprint feel), Inter for body -->
+<!-- Google Fonts: Space Grotesk for headings (technical/blueprint feel), Playfair Display for the hero's editorial serif word, Inter for body -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -50,7 +50,9 @@
     </button>
 
     <nav class="nav-links" id="navLinks">
+      <span class="nav-pill" id="navPill" aria-hidden="true"></span>
       <button class="nav-link" data-nav="home">Home</button>
+      <button class="nav-link" data-nav="about">About</button>
       <button class="nav-link" data-nav="auth" id="navAuthBtn">Login</button>
       <button class="nav-link is-hidden" data-nav="dashboard" id="navDashboardBtn">Dashboard</button>
       <button class="nav-link is-hidden" id="navLogoutBtn">Log out</button>
@@ -70,30 +72,64 @@
   <section class="page is-active" id="page-home" data-page="home">
 
     <!-- Hero -->
-    <div class="hero">
-      <div class="hero-photo" style="background-image:url('images/work-exterior-2.jpg')" aria-hidden="true"></div>
+    <div class="hero" id="heroSection">
+      <div class="hero-photo" id="heroPhoto" style="background-image:url('images/work-exterior-2.jpg')" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <p class="hero-eyebrow">Nairobi, Kiambu &amp; Machakos</p>
-        <h1 class="hero-title">Elevate your living experience</h1>
-        <p class="hero-lede">
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <div class="hero-inner" id="heroInner">
+        <p class="hero-eyebrow hero-anim" style="--d:0s"><span class="hero-eyebrow-tick" aria-hidden="true"></span>Nationwide Service</p>
+
+        <h1 class="hero-title hero-anim" style="--d:.08s">
+          <span class="hero-title-sans">Elevate your Living </span>
+          <span class="hero-title-serif">Experience</span>
+        </h1>
+
+        <p class="hero-lede hero-anim" style="--d:.16s">
           Allied Interiors and Construction designs, builds and fits out homes end to end —
-          structural work, roofing, plumbing and electrical, through to kitchens, flooring
-          and lighting. One team, one contract, no handoffs.
+          structural work through to kitchens, flooring and lighting. One team, one contract.
         </p>
-        <div class="hero-actions">
+
+        <div class="hero-actions hero-anim" style="--d:.24s">
           <button class="btn btn-primary" data-nav="auth">Get started</button>
           <button class="btn btn-ghost" id="heroContactBtn">Contact us</button>
           <a class="btn btn-whatsapp" href="https://wa.me/p/8824173431018004/254713982414" target="_blank" rel="noopener">
             <span class="wa-icon" aria-hidden="true">●</span> Chat on WhatsApp
           </a>
         </div>
-        <dl class="hero-stats">
-          <div><dt>120+</dt><dd>Projects completed</dd></div>
-          <div><dt>13</dt><dd>Years in operation</dd></div>
-          <div><dt>4.8/5</dt><dd>Average client rating</dd></div>
-        </dl>
+
+        <button class="hero-explore hero-anim" id="heroExploreBtn" style="--d:.3s">
+          <span>Explore our work</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+        </button>
+      </div>
+
+     
+
+        <div class="hero-stat-pill hero-anim" style="--d:.48s">
+          <span class="hero-status-dot" aria-hidden="true"></span>
+          120+ projects completed
+        </div>
+
+        <div class="hero-cta-row hero-anim" style="--d:.54s">
+          <button class="hero-membership" data-nav="auth">
+            <span class="hero-avatars hero-avatars-stack">
+              <img src="https://picsum.photos/seed/otieno/100/100" alt="">
+              <img src="https://picsum.photos/seed/fatuma/100/100" alt="">
+              <img src="https://picsum.photos/seed/brian/100/100" alt="">
+            </span>
+            Start your project
+          </button>
+          <button class="hero-diamond" data-nav="auth" aria-label="Start your project">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="hero-scroll-line"><span class="hero-scroll-highlight"></span></span>
       </div>
     </div>
 
@@ -110,6 +146,7 @@
     <!-- Brand quote -->
     <div class="quote-strip">
       <p>“At Allied Interiors, we strive to exceed your expectations on every project.”</p>
+      <button class="link-btn about-teaser-link" data-nav="about">Meet the person behind it →</button>
     </div>
 
     <!-- Services strip -->
@@ -176,6 +213,17 @@
       </ol>
     </div>
 
+    <!-- Before / After transformations -->
+    <div class="section">
+      <div class="section-head">
+        <h2>Transformations</h2>
+        <p>Drag the slider to see the difference.</p>
+      </div>
+      <div class="compare-list" id="compareList">
+        <!-- injected by script.js -->
+      </div>
+    </div>
+
     <!-- Work gallery -->
     <div class="section">
       <div class="section-head">
@@ -186,8 +234,18 @@
         <button class="filter-btn is-active" data-filter="all">All work</button>
         <button class="filter-btn" data-filter="construction">Construction</button>
         <button class="filter-btn" data-filter="interiors">Interiors</button>
+        <button class="filter-btn" data-filter="lighting">Lighting</button>
+        <button class="filter-btn" data-filter="landscaping">Landscaping</button>
+        <button class="filter-btn" data-filter="wainscoting">Wainscoting</button>
       </div>
       <div class="gallery-grid" id="galleryGrid">
+        <!-- injected by script.js -->
+      </div>
+    </div>
+
+    <!-- Review marquee: continuous auto-scrolling social proof -->
+    <div class="marquee-section">
+      <div class="marquee-track" id="marqueeTrack">
         <!-- injected by script.js -->
       </div>
     </div>
@@ -206,6 +264,65 @@
       </div>
     </div>
 
+    <!-- Rough cost estimator -->
+    <div class="section">
+      <div class="section-head">
+        <h2>Get a rough estimate</h2>
+        <p>A ballpark figure in seconds — not a formal quote, just a starting point.</p>
+      </div>
+      <div class="estimator-card">
+        <form id="estimatorForm" novalidate>
+          <label class="field">
+            <span>Project type</span>
+            <select id="estimatorType">
+              <option value="New construction">New construction</option>
+              <option value="Renovation">Renovation</option>
+              <option value="Interior fit-out">Interior fit-out</option>
+              <option value="Roofing">Roofing</option>
+              <option value="Painting">Painting</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Approximate size (square metres)</span>
+            <input type="number" id="estimatorSize" min="1" step="1" placeholder="e.g. 120" required>
+          </label>
+          <button type="submit" class="btn btn-primary">Calculate estimate</button>
+        </form>
+        <div class="estimator-result is-hidden" id="estimatorResult">
+          <p class="estimator-label">Estimated range</p>
+          <p class="estimator-range">KES <span id="estLow"></span> – <span id="estHigh"></span></p>
+          <p class="estimator-disclaimer">This is a rough guide only, based on typical project rates — not a formal quote. Actual cost depends on materials, finishes and site conditions.</p>
+          <button class="btn btn-ghost btn-navy" id="estimatorCTA">Request a free site visit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- What to expect from a site visit -->
+    <div class="section section-tinted">
+      <div class="section-head">
+        <h2>What to expect from your site visit</h2>
+        <p>No pressure, no jargon — here's exactly how it goes.</p>
+      </div>
+      <ul class="checklist-grid">
+        <li class="checklist-item">
+          <span class="checklist-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          We confirm a time that works for you — usually within 48 hours of your enquiry
+        </li>
+        <li class="checklist-item">
+          <span class="checklist-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          We walk the site together, take measurements and photos, and listen to what you want
+        </li>
+        <li class="checklist-item">
+          <span class="checklist-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          We talk budget openly — no pressure to commit on the spot
+        </li>
+        <li class="checklist-item">
+          <span class="checklist-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+          You receive a written, fixed-price quote within a few days
+        </li>
+      </ul>
+    </div>
+
     <!-- Contact CTA -->
     <div class="cta-banner">
       <div>
@@ -220,6 +337,59 @@
       </div>
     </div>
 
+    <!-- Find us -->
+    <div class="section findus-section">
+      <div class="section-head">
+        <h2>Find us</h2>
+        <p>Based on Eastern Bypass, Nairobi — site visits by appointment.</p>
+      </div>
+      <div class="findus-grid">
+        <div class="findus-map">
+          <iframe
+            src="https://www.google.com/maps?q=Eastern+Bypass,+Nairobi,+Kenya&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Allied Interiors and Construction — Eastern Bypass, Nairobi">
+          </iframe>
+        </div>
+        <div class="findus-details">
+          <dl>
+            <div><dt>Address</dt><dd>Eastern Bypass, Nairobi</dd></div>
+            <div><dt>Phone</dt><dd>+254 713 982 414</dd></div>
+            <div><dt>Email</dt><dd>alliedinteriors254@gmail.com</dd></div>
+            <div><dt>Hours</dt><dd>Mon–Fri 8am–6pm, Sat 8am–1pm</dd></div>
+          </dl>
+          <a class="btn btn-ghost btn-navy" href="https://www.google.com/maps?q=Eastern+Bypass,+Nairobi,+Kenya" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PAGE: ABOUT / CONTRACTOR BIO                                  -->
+  <!-- ============================================================ -->
+  <section class="page" id="page-about" data-page="about">
+    <div class="about-wrap">
+     <div class="about-photo-col">
+  <img src=images/Francis.png alt="My Photo" class="about-avatar" />
+  <p class="about-photo-note">[  ]</p>
+</div>
+
+      <div class="about-content-col">
+        <p class="dash-eyebrow">About</p>
+        <h1>[ Francis ]</h1>
+        <p class="about-role">Founder &amp; Lead Contractor, Allied Interiors and Construction</p>
+        <p>[ Francis is a passionate and experienced contractor with over 10 years of expertise in interior design and construction. He is dedicated to delivering high-quality work and ensuring client satisfaction. ]</p>
+        <p>[ Francis believes in creating spaces that are not only functional but also aesthetically pleasing, reflecting the unique style and personality of each client. ]</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="aboutContactBtn">Get in touch</button>
+          <a class="btn btn-whatsapp" href="https://wa.me/p/8824173431018004/254713982414" target="_blank" rel="noopener">
+            <span class="wa-icon" aria-hidden="true">●</span> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ============================================================ -->
@@ -449,6 +619,7 @@
     <div class="subtabs" role="tablist">
       <button class="subtab is-active" data-tab="upload">Upload work</button>
       <button class="subtab" data-tab="manage">Manage work</button>
+      <button class="subtab" data-tab="transform">Before/After</button>
       <button class="subtab" data-tab="areviews">Reviews</button>
       <button class="subtab" data-tab="messages">Messages</button>
     </div>
@@ -468,6 +639,9 @@
             <select id="workCategory">
               <option value="construction">Construction</option>
               <option value="interiors">Interiors</option>
+              <option value="lighting">Lighting</option>
+              <option value="landscaping">Landscaping</option>
+              <option value="wainscoting">Wainscoting</option>
             </select>
           </label>
           <label class="field">
@@ -491,6 +665,39 @@
     <!-- Manage work -->
     <div class="subtab-panel" data-tabpanel="manage">
       <div class="admin-grid" id="adminWorkGrid">
+        <!-- injected -->
+      </div>
+    </div>
+
+    <!-- Before / After -->
+    <div class="subtab-panel" data-tabpanel="transform">
+      <div class="panel-card panel-card-narrow">
+        <h3>Add a before/after transformation</h3>
+        <p class="field-note" style="margin-bottom:16px;">Two photos of the same space — one before, one after.</p>
+        <form id="compareForm" novalidate>
+          <label class="field">
+            <span>Title</span>
+            <input type="text" id="compareTitle" required placeholder="e.g. Living room refresh — Karen">
+          </label>
+          <label class="field">
+            <span>Description (optional)</span>
+            <textarea id="compareDesc" rows="2" placeholder="What changed, and how long it took"></textarea>
+          </label>
+          <label class="field">
+            <span>Before photo</span>
+            <input type="file" id="compareBefore" accept="image/*" required>
+            <img class="photo-preview is-hidden" id="compareBeforePreview" alt="Before photo preview">
+          </label>
+          <label class="field">
+            <span>After photo</span>
+            <input type="file" id="compareAfter" accept="image/*" required>
+            <img class="photo-preview is-hidden" id="compareAfterPreview" alt="After photo preview">
+          </label>
+          <button type="submit" class="btn btn-primary">Add transformation</button>
+        </form>
+      </div>
+
+      <div class="stacked-list" id="adminCompareList" style="margin-top:24px;">
         <!-- injected -->
       </div>
     </div>
@@ -538,6 +745,38 @@
 
 <!-- Toast for quick confirmations -->
 <div class="toast" id="toast"></div>
+
+<!-- Gallery lightbox: click any project photo to enlarge -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
+  <figure class="lightbox-figure">
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>
+  </figure>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
+</div>
+
+<!-- Quick-answers FAQ widget: rule-based suggested Q&A, not a live AI connection -->
+<div class="faq-widget" id="faqWidget">
+  <div class="faq-panel" id="faqPanel" role="dialog" aria-label="Quick answers">
+    <div class="faq-panel-header">
+      <div>
+        <strong>Allied Interiors</strong>
+        <span>Quick answers</span>
+      </div>
+      <button class="faq-panel-close" id="faqPanelClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="faq-messages" id="faqMessages">
+      <div class="faq-message faq-message-bot">Hi! Tap a question below for a quick answer.</div>
+    </div>
+    <div class="faq-chips" id="faqChips"></div>
+  </div>
+  <button class="faq-launcher" id="faqLauncher" aria-label="Open quick answers" aria-expanded="false">
+    <svg class="faq-icon-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-4 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+    <svg class="faq-icon-close" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+  </button>
+</div>
 
 <script src="script.js"></script>
 </body>
